@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Advent Roofing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="logo-text">Advent <span>Roofing</span></div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="nav-links" id="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <div class="dropdown" id="services-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="services.html" class="dropdown-item">All Services</a>
+                            <a href="services.html#installation" class="dropdown-item">Roof Installation</a>
+                            <a href="services.html#repair" class="dropdown-item">Roof Repair</a>
+                            <a href="services.html#inspection" class="dropdown-item">Roof Inspection</a>
+                            <a href="services.html#gutter" class="dropdown-item">Gutter Systems</a>
+                            <a href="services.html#emergency" class="dropdown-item">Emergency Services</a>
+                        </div>
+                    </div>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="testimonials.html" class="nav-link">Testimonials</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1595752776689-a3d6bc7a4a5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="container">
+            <div class="page-hero-content animate-on-scroll">
+                <h1>About Advent Roofing</h1>
+                <p>Two decades of excellence in roofing solutions</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2003, Advent Roofing began as a small family-owned business with a simple mission: to provide exceptional roofing services with integrity, quality, and reliability. What started as a two-person operation has grown into one of the region's most trusted roofing companies.</p>
+                    <p>Over the past 20 years, we've completed thousands of roofing projects, from simple repairs to complex commercial installations. Our commitment to using premium materials, employing skilled craftsmen, and delivering outstanding customer service has earned us a reputation for excellence.</p>
+                    <p>Today, we continue to uphold the values that our founders established: honesty, quality workmanship, and putting our customers first in everything we do.</p>
+                </div>
+                <div class="about-img animate-on-scroll" style="animation-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1623298317882-8e6a7d21e8c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Advent Roofing">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Awards & Recognition -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-card animate-on-scroll">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Best Roofing Company 2022</h3>
+                    <p>National Roofing Contractors Association</p>
+                </div>
+                
+                <div class="award-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Excellence in Customer Service</h3>
+                    <p>Home Improvement Awards 2021</p>
+                </div>
+                
+                <div class="award-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Top 10 Roofing Contractors</h3>
+                    <p>Roofing Professionals Magazine 2020</p>
+                </div>
+                
+                <div class="award-card animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Safety Excellence Award</h3>
+                    <p>Occupational Safety Council 2019</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Meet Our Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-card animate-on-scroll">
+                    <div class="team-img">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="John Anderson">
+                    </div>
+                    <div class="team-content">
+                        <h3>John Anderson</h3>
+                        <p class="team-role">Founder & CEO</p>
+                        <p>With 25 years in the roofing industry, John founded Advent Roofing with a vision for quality and customer satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="team-img">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Miller">
+                    </div>
+                    <div class="team-content">
+                        <h3>Sarah Miller</h3>
+                        <p class="team-role">Operations Director</p>
+                        <p>Sarah oversees all roofing projects, ensuring they meet our high standards for quality and timeliness.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="team-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                    </div>
+                    <div class="team-content">
+                        <h3>Michael Chen</h3>
+                        <p class="team-role">Technical Director</p>
+                        <p>Michael is our roofing expert with certifications in all major roofing systems and materials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="section-padding bg-dark text-white">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfied Customers</div>
+                </div>
+                <div class="stat-item animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Emergency Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section section-padding" style="background-image: linear-gradient(rgba(0, 91, 179, 0.9), rgba(0, 91, 179, 0.9)), url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Work With Award-Winning Roofers</h2>
+                <p>Experience the difference that 20 years of roofing excellence can make for your home or business.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn" style="background-color: var(--white); color: var(--primary);">Get Your Free Quote</a>
+                    <a href="tel:+15551237663" class="btn btn-cta-outline">
+                        <i class="fas fa-phone"></i> Call (555) 123-ROOF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Advent <span>Roofing</span></div>
+                    <p>Premium roofing solutions with over 20 years of experience. We protect your home with quality craftsmanship and reliable service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Roofing Street, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-ROOF</p>
+                    <p><i class="fas fa-envelope"></i> info@adventroofing.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Advent Roofing. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--gold);"></i> for premium roofing solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
