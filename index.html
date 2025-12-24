@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advent Roofing | Premium Roofing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #007bff;
+            --primary-dark: #0056b3;
+            --secondary: #222;
+            --light: #f9f9f9;
+            --white: #fff;
+            --gray: #555;
+            --gold: #ffd700;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-hover: 0 10px 25px rgba(0,0,0,0.1);
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            line-height: 1.3;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 1rem auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.8rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-cta-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+        
+        .btn-cta-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+        
+        .dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow-hover);
+            border-radius: var(--border-radius);
+            min-width: 200px;
+            padding: 1rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 0.7rem 1.5rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            padding-left: 2rem;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            cursor: pointer;
+        }
+        
+        /* Page Container */
+        .page-container {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .page-container.active {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1595752776689-a3d6bc7a4a5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .typing-text {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            min-height: 2.5rem;
+        }
+        
+        .typing-text span {
+            color: var(--gold);
+            border-right: 2px solid var(--gold);
+            padding-right: 5px;
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .lead-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .lead-form h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+        }
+        
+        /* Services Page */
+        .services-page {
+            padding: 5rem 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        /* Gallery Page */
+        .gallery-page {
+            padding: 5rem 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            color: var(--white);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* Testimonials Page */
+        .testimonials-page {
+            padding: 5rem 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .rating {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        /* Contact Page */
+        .contact-page {
+            padding: 5rem 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .map-container {
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+        
+        /* About Page */
+        .about-page {
+            padding: 5rem 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-links h4,
+        .footer-contact h4 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-links h4::after,
+        .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-hover);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                padding: 0.5rem 0 0.5rem 1.5rem;
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .typing-text {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .lead-form {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="logo-text">Advent <span>Roofing</span></div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="nav-links" id="main-nav">
+                    <a href="#" class="nav-link active" data-page="home">Home</a>
+                    <a href="#" class="nav-link" data-page="about">About</a>
+                    <div class="dropdown" id="services-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item" data-page="services">All Services</a>
+                            <a href="#" class="dropdown-item">Roof Installation</a>
+                            <a href="#" class="dropdown-item">Roof Repair</a>
+                            <a href="#" class="dropdown-item">Roof Inspection</a>
+                            <a href="#" class="dropdown-item">Gutter Systems</a>
+                            <a href="#" class="dropdown-item">Emergency Services</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-link" data-page="gallery">Gallery</a>
+                    <a href="#" class="nav-link" data-page="testimonials">Testimonials</a>
+                    <a href="#" class="nav-link" data-page="contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home" class="page-container active">
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text animate-on-scroll">
+                        <h1>Premium Roofing Solutions for Your Home</h1>
+                        <div class="typing-text">
+                            We protect your home with: <span id="typing"></span>
+                        </div>
+                        <p>With over 20 years of experience, Advent Roofing provides reliable, high-quality roofing services with a commitment to excellence and customer satisfaction.</p>
+                        <a href="#contact-form" class="btn btn-cta-outline" data-page="contact">Get Free Estimate</a>
+                    </div>
+                    
+                    <div class="lead-form animate-on-scroll" style="animation-delay: 0.3s;">
+                        <h3>Get Your Free Roofing Quote</h3>
+                        <form id="lead-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <select required>
+                                    <option value="" disabled selected>Select Service</option>
+                                    <option value="installation">Roof Installation</option>
+                                    <option value="repair">Roof Repair</option>
+                                    <option value="inspection">Roof Inspection</option>
+                                    <option value="gutter">Gutter Systems</option>
+                                    <option value="emergency">Emergency Services</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-block" style="width: 100%;">Send Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Featured Services -->
+        <div class="container" style="padding: 5rem 0;">
+            <h2 class="section-title animate-on-scroll">Our Premium Services</h2>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roof Installation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Roof Installation</h3>
+                        <p>Professional installation of durable roofing materials with industry-leading warranties for maximum protection.</p>
+                        <a href="#" class="btn btn-outline" data-page="services">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1673&q=80" alt="Roof Repair">
+                    </div>
+                    <div class="service-content">
+                        <h3>Roof Repair</h3>
+                        <p>Prompt and reliable repair services to fix leaks, damages, and extend the life of your roof.</p>
+                        <a href="#" class="btn btn-outline" data-page="services">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Roof Inspection">
+                    </div>
+                    <div class="service-content">
+                        <h3>Roof Inspection</h3>
+                        <p>Comprehensive roof assessment to identify issues early and provide maintenance recommendations.</p>
+                        <a href="#" class="btn btn-outline" data-page="services">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page-container">
+        <div class="about-page">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">About Advent Roofing</h2>
+                <div class="about-content">
+                    <div class="about-text animate-on-scroll">
+                        <h3>Trusted Roofing Experts Since 2003</h3>
+                        <p>Advent Roofing has been providing premium roofing solutions to homeowners and businesses for over two decades. Our commitment to quality craftsmanship, exceptional customer service, and attention to detail has made us a leader in the roofing industry.</p>
+                        <p>We specialize in both residential and commercial roofing projects, using only the highest quality materials and employing certified roofing professionals who are trained in the latest installation techniques.</p>
+                        <p>Our mission is to protect what matters most to you - your home, your family, and your investment - with roofing solutions that stand the test of time.</p>
+                        <a href="#" class="btn" data-page="contact">Contact Us Today</a>
+                    </div>
+                    <div class="about-img animate-on-scroll" style="animation-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1623298317882-8e6a7d21e8c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Advent Roofing">
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item animate-on-scroll">
+                        <div class="stat-number">2,500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll" style="animation-delay: 0.4s;">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfied Customers</div>
+                    </div>
+                    <div class="stat-item animate-on-scroll" style="animation-delay: 0.6s;">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Emergency Service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page -->
+    <section id="services" class="page-container">
+        <div class="services-page">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Roofing Services</h2>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roof Installation">
+                        </div>
+                        <div class="service-content">
+                            <h3>Roof Installation</h3>
+                            <p>Complete roof replacement and new construction installations using premium materials like asphalt shingles, metal roofing, tile, and slate. We ensure proper ventilation and insulation for maximum energy efficiency.</p>
+                            <a href="#" class="btn btn-outline">Get Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1673&q=80" alt="Roof Repair">
+                        </div>
+                        <div class="service-content">
+                            <h3>Roof Repair</h3>
+                            <p>From minor leaks to major storm damage, our repair services restore your roof's integrity. We fix shingle damage, flashing issues, valleys, and more with precision and quality materials.</p>
+                            <a href="#" class="btn btn-outline">Get Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Roof Inspection">
+                        </div>
+                        <div class="service-content">
+                            <h3>Roof Inspection</h3>
+                            <p>Comprehensive roof assessments to identify potential issues before they become costly problems. We provide detailed reports with photos and recommendations for maintenance or repair.</p>
+                            <a href="#" class="btn btn-outline">Schedule Inspection</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.3s;">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1621967299229-c6e7085a7b95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gutter Systems">
+                        </div>
+                        <div class="service-content">
+                            <h3>Gutter Systems</h3>
+                            <p>Installation and repair of seamless gutter systems to protect your home from water damage. We offer various materials and styles to match your home's aesthetic while ensuring proper drainage.</p>
+                            <a href="#" class="btn btn-outline">Get Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.4s;">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1596476556567-679ef17916ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Emergency Services">
+                        </div>
+                        <div class="service-content">
+                            <h3>Emergency Services</h3>
+                            <p>24/7 emergency response for storm damage, leaks, and other urgent roofing issues. We provide temporary solutions to prevent further damage and schedule permanent repairs promptly.</p>
+                            <a href="#" class="btn btn-outline">Call Now: (555) 123-ROOF</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.5s;">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roof Maintenance">
+                        </div>
+                        <div class="service-content">
+                            <h3>Roof Maintenance</h3>
+                            <p>Regular maintenance programs to extend your roof's lifespan and prevent costly repairs. Includes cleaning, minor repairs, and inspection to keep your roof in optimal condition year-round.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Page -->
+    <section id="gallery" class="page-container">
+        <div class="gallery-page">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Roofing Projects</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1673&q=80" alt="Residential Roof Installation">
+                        <div class="gallery-overlay">
+                            <h3>Residential Roof Installation</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll" style="animation-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1595752776689-a3d6bc7a4a5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial Roofing">
+                        <div class="gallery-overlay">
+                            <h3>Commercial Roofing</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll" style="animation-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Metal Roof Installation">
+                        <div class="gallery-overlay">
+                            <h3>Metal Roof Installation</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll" style="animation-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Roof Inspection">
+                        <div class="gallery-overlay">
+                            <h3>Roof Inspection</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll" style="animation-delay: 0.4s;">
+                        <img src="https://images.unsplash.com/photo-1596476556567-679ef17916ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Storm Damage Repair">
+                        <div class="gallery-overlay">
+                            <h3>Storm Damage Repair</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll" style="animation-delay: 0.5s;">
+                        <img src="https://images.unsplash.com/photo-1621967299229-c6e7085a7b95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gutter Installation">
+                        <div class="gallery-overlay">
+                            <h3>Gutter Installation</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll" style="animation-delay: 0.6s;">
+                        <img src="https://images.unsplash.com/photo-1623298317882-8e6a7d21e8c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Tile Roofing">
+                        <div class="gallery-overlay">
+                            <h3>Tile Roofing</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item animate-on-scroll" style="animation-delay: 0.7s;">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roof Maintenance">
+                        <div class="gallery-overlay">
+                            <h3>Roof Maintenance</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Page -->
+    <section id="testimonials" class="page-container">
+        <div class="testimonials-page">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Customer Testimonials</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Advent Roofing replaced our entire roof after a severe storm. They were professional, efficient, and the quality of work was exceptional. Our new roof looks amazing and gives us peace of mind."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Thompson">
+                            </div>
+                            <div>
+                                <h4>Michael Thompson</h4>
+                                <p>Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The team at Advent Roofing was fantastic from start to finish. They provided a detailed quote, explained the process clearly, and completed the job ahead of schedule. Highly recommend their services!"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.4s;">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"After a bad experience with another roofing company, Advent Roofing came to our rescue. They fixed all the issues professionally and stood behind their work. Exceptional customer service!"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Robert Garcia">
+                            </div>
+                            <div>
+                                <h4>Robert Garcia</h4>
+                                <p>Property Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.6s;">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"We needed emergency roof repairs after a tree fell on our house. Advent Roofing responded within an hour and had temporary protection up that night. Their team was compassionate and professional throughout."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Lee">
+                            </div>
+                            <div>
+                                <h4>Jennifer Lee</h4>
+                                <p>Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-container">
+        <div class="contact-page">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-form animate-on-scroll">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <select required>
+                                    <option value="" disabled selected>Service Interested In</option>
+                                    <option value="installation">Roof Installation</option>
+                                    <option value="repair">Roof Repair</option>
+                                    <option value="inspection">Roof Inspection</option>
+                                    <option value="gutter">Gutter Systems</option>
+                                    <option value="emergency">Emergency Services</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info animate-on-scroll" style="animation-delay: 0.3s;">
+                        <h3>Get In Touch</h3>
+                        <p>Contact Advent Roofing today for a free consultation and estimate on your roofing project.</p>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>123 Roofing Street, Suite 100<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>(555) 123-ROOF (7663)<br>Emergency: (555) 123-HELP (4357)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@adventroofing.com<br>estimates@adventroofing.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Emergency Services: 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container animate-on-scroll" style="animation-delay: 0.5s;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.183792572885!2d-73.98784468459386!3d40.757974979327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036!5e0!3m2!1sen!2sus!4v1684529633170!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Advent <span>Roofing</span></div>
+                    <p>Premium roofing solutions with over 20 years of experience. We protect your home with quality craftsmanship and reliable service.</p>
+                    <div class="social-links" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About Us</a></li>
+                        <li><a href="#" data-page="services">Our Services</a></li>
+                        <li><a href="#" data-page="gallery">Project Gallery</a></li>
+                        <li><a href="#" data-page="testimonials">Testimonials</a></li>
+                        <li><a href="#" data-page="contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Roofing Street, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-ROOF</p>
+                    <p><i class="fas fa-envelope"></i> info@adventroofing.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Advent Roofing. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ffd700;"></i> for premium roofing solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const header = document.getElementById('main-header');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const servicesDropdown = document.getElementById('services-dropdown');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        const pageContainers = document.querySelectorAll('.page-container');
+        const typingElement = document.getElementById('typing');
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        // Typing animation phrases
+        const phrases = [
+            "Quality Craftsmanship",
+            "Reliable Solutions",
+            "Expert Installation",
+            "24/7 Emergency Service",
+            "Premium Materials",
+            "Exceptional Service"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isEnd = false;
+        
+        // Typing animation function
+        function typeText() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                // Delete characters
+                typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Type characters
+                typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            // If typing is complete
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isEnd = true;
+                isDeleting = true;
+                // Pause at the end of typing
+                setTimeout(typeText, 1500);
+                return;
+            }
+            
+            // If deleting is complete
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex++;
+                if (phraseIndex === phrases.length) {
+                    phraseIndex = 0;
+                }
+            }
+            
+            // Determine typing speed
+            const typeSpeed = isDeleting ? 50 : 100;
+            // Randomize speed slightly for natural effect
+            const randomSpeed = Math.random() * 50 + typeSpeed;
+            
+            setTimeout(typeText, randomSpeed);
+        }
+        
+        // Start typing animation when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start typing animation after a brief delay
+            setTimeout(typeText, 1000);
+            
+            // Initialize scroll animations
+            checkScroll();
+            
+            // Form submission handlers
+            document.getElementById('lead-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your request! We will contact you shortly.');
+                this.reset();
+            });
+            
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will respond within 24 hours.');
+                this.reset();
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Check for scroll animations
+            checkScroll();
+        });
+        
+        // Mobile menu toggle
+        mobileMenuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuToggle.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Services dropdown toggle for mobile
+        servicesDropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                e.preventDefault();
+                servicesDropdown.classList.toggle('active');
+            }
+        });
+        
+        // Handle dropdown hover for desktop
+        if (window.innerWidth > 992) {
+            servicesDropdown.addEventListener('mouseenter', () => {
+                servicesDropdown.classList.add('active');
+            });
+            
+            servicesDropdown.addEventListener('mouseleave', () => {
+                servicesDropdown.classList.remove('active');
+            });
+        }
+        
+        // Page navigation
+        function navigateToPage(pageId) {
+            // Hide all pages
+            pageContainers.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update active nav link
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 992) {
+                mainNav.classList.remove('active');
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Nav link click handlers
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+                navigateToPage(pageId);
+            });
+        });
+        
+        // Dropdown item click handlers (for services)
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = item.getAttribute('data-page');
+                if (pageId) {
+                    navigateToPage(pageId);
+                } else {
+                    // If no data-page attribute, navigate to services page
+                    navigateToPage('services');
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 992) {
+                        mainNav.classList.remove('active');
+                        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        servicesDropdown.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Scroll animation function
+        function checkScroll() {
+            animateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initialize animations on page load
+        window.addEventListener('load', checkScroll);
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Close mobile menu if resizing to larger screen
+            if (window.innerWidth > 992 && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
