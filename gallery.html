@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery | Advent Roofing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="logo-text">Advent <span>Roofing</span></div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="nav-links" id="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <div class="dropdown" id="services-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="services.html" class="dropdown-item">All Services</a>
+                            <a href="services.html#installation" class="dropdown-item">Roof Installation</a>
+                            <a href="services.html#repair" class="dropdown-item">Roof Repair</a>
+                            <a href="services.html#inspection" class="dropdown-item">Roof Inspection</a>
+                            <a href="services.html#gutter" class="dropdown-item">Gutter Systems</a>
+                            <a href="services.html#emergency" class="dropdown-item">Emergency Services</a>
+                        </div>
+                    </div>
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                    <a href="testimonials.html" class="nav-link">Testimonials</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1595752776689-a3d6bc7a4a5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="container">
+            <div class="page-hero-content animate-on-scroll">
+                <h1>Our Project Gallery</h1>
+                <p>Showcasing our premium roofing installations and repairs</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="gallery-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="installation">Installation</button>
+                <button class="filter-btn" data-filter="repair">Repair</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll" data-category="installation residential">
+                    <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential Roof Installation">
+                    <div class="gallery-overlay">
+                        <h3>Residential Roof Installation</h3>
+                        <p>Complete roof replacement with architectural shingles</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll" data-category="repair residential" style="animation-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1673&q=80" alt="Storm Damage Repair">
+                    <div class="gallery-overlay">
+                        <h3>Storm Damage Repair</h3>
+                        <p>Emergency repair after severe hailstorm</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll" data-category="installation commercial" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1595752776689-a3d6bc7a4a5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial Roofing">
+                    <div class="gallery-overlay">
+                        <h3>Commercial Roofing</h3>
+                        <p>Flat roof installation for office building</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll" data-category="installation residential" style="animation-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Tile Roof Installation">
+                    <div class="gallery-overlay">
+                        <h3>Tile Roof Installation</h3>
+                        <p>Clay tile installation for luxury home</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll" data-category="repair commercial" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1596476556567-679ef17916ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Commercial Roof Repair">
+                    <div class="gallery-overlay">
+                        <h3>Commercial Roof Repair</h3>
+                        <p>Leak repair for warehouse facility</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll" data-category="installation residential" style="animation-delay: 0.5s;">
+                    <img src="https://images.unsplash.com/photo-1621967299229-c6e7085a7b95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gutter Installation">
+                    <div class="gallery-overlay">
+                        <h3>Gutter Installation</h3>
+                        <p>Seamless gutter system installation</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll" data-category="installation residential" style="animation-delay: 0.6s;">
+                    <img src="https://images.unsplash.com/photo-1623298317882-8e6a7d21e8c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Metal Roof Installation">
+                    <div class="gallery-overlay">
+                        <h3>Metal Roof Installation</h3>
+                        <p>Standing seam metal roof for modern home</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll" data-category="repair residential" style="animation-delay: 0.7s;">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Leak Repair">
+                    <div class="gallery-overlay">
+                        <h3>Emergency Leak Repair</h3>
+                        <p>Urgent leak repair during heavy rainfall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section section-padding" style="background-image: linear-gradient(rgba(0, 91, 179, 0.9), rgba(0, 91, 179, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1673&q=80');">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Ready to Transform Your Roof?</h2>
+                <p>View more of our work and get inspired for your own roofing project. Contact us for a free consultation.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn" style="background-color: var(--white); color: var(--primary);">Start Your Project</a>
+                    <a href="tel:+15551237663" class="btn btn-cta-outline">
+                        <i class="fas fa-phone"></i> Schedule Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Advent <span>Roofing</span></div>
+                    <p>Premium roofing solutions with over 20 years of experience. We protect your home with quality craftsmanship and reliable service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Roofing Street, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-ROOF</p>
+                    <p><i class="fas fa-envelope"></i> info@adventroofing.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Advent Roofing. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--gold);"></i> for premium roofing solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
