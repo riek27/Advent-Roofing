@@ -1,35 +1,36 @@
-<script>
-// ============ DOM READY ============ //
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // ======= ELEMENTS ======= //
-    const header = document.getElementById("main-header");
-    const mobileBtn = document.getElementById("mobile-menu-toggle");
-    const nav = document.getElementById("main-nav");
-    const servicesDropdown = document.getElementById("services-dropdown");
-    const typingEl = document.getElementById("typing");
+    // ===== ELEMENT LOOKUPS (SAFE) =====
+    const header = document.getElementById("main-header") || null;
+    const mobileBtn = document.getElementById("mobile-menu-toggle") || null;
+    const nav = document.getElementById("main-nav") || null;
+    const servicesDropdown = document.getElementById("services-dropdown") || null;
+    const typingEl = document.getElementById("typing") || null;
     const animateEls = document.querySelectorAll(".animate-on-scroll");
-    const leadForm = document.getElementById("lead-form");
-    const contactForm = document.getElementById("contact-form");
+    const leadForm = document.getElementById("lead-form") || null;
+    const contactForm = document.getElementById("contact-form") || null;
 
     // ========================================================
-    // 1️⃣  MOBILE MENU (FULLY FIXED + ACCESSIBLE)
+    // 1️⃣  MOBILE MENU
     // ========================================================
     let menuOpen = false;
 
     function toggleMenu() {
+        if (!nav || !mobileBtn) return;
+
         menuOpen = !menuOpen;
+
         nav.classList.toggle("active", menuOpen);
+        document.body.classList.toggle("menu-open", menuOpen);
+
         mobileBtn.innerHTML = menuOpen
             ? '<i class="fas fa-times"></i>'
             : '<i class="fas fa-bars"></i>';
-        document.body.classList.toggle("menu-open", menuOpen);
     }
 
     if (mobileBtn && nav) {
         mobileBtn.addEventListener("click", toggleMenu);
 
-        // Close when clicking outside
         document.addEventListener("click", e => {
             if (
                 menuOpen &&
@@ -40,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Reset on desktop
         window.addEventListener("resize", () => {
             if (window.innerWidth > 992 && menuOpen) toggleMenu();
         });
@@ -50,16 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2️⃣  SERVICES DROPDOWN
     // ========================================================
     if (servicesDropdown) {
-        const toggleDropdown = e => {
+        servicesDropdown.addEventListener("click", e => {
             if (window.innerWidth <= 992) {
                 e.preventDefault();
                 servicesDropdown.classList.toggle("active");
             }
-        };
+        });
 
-        servicesDropdown.addEventListener("click", toggleDropdown);
-
-        // Desktop hover
         servicesDropdown.addEventListener("mouseenter", () => {
             if (window.innerWidth > 992)
                 servicesDropdown.classList.add("active");
@@ -74,22 +71,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // ========================================================
     // 3️⃣  HEADER SCROLL EFFECT
     // ========================================================
-    const handleScroll = () => {
-        header?.classList.toggle("scrolled", window.scrollY > 80);
+    function handleScroll() {
+        if (header) header.classList.toggle("scrolled", window.scrollY > 80);
         animateOnScroll();
-    };
+    }
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     // ========================================================
-    // 4️⃣  SMOOTH SCROLL (INTERNAL LINKS ONLY)
+    // 4️⃣  SMOOTH SCROLL
     // ========================================================
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener("click", e => {
-            const id = a.getAttribute("href").substring(1);
+            const id = a.getAttribute("href").slice(1);
             const el = document.getElementById(id);
-            if (!el) return;
+
+            if (!el) return; // only smooth scroll if target exists
 
             e.preventDefault();
 
@@ -117,9 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let p = 0, c = 0, deleting = false;
 
-        const type = () => {
+        function type() {
             const text = phrases[p];
-
             typingEl.textContent = text.substring(0, c);
 
             if (!deleting && c < text.length) c++;
@@ -130,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             setTimeout(type, deleting ? 60 : 100);
-        };
+        }
 
         setTimeout(type, 500);
     }
@@ -145,13 +142,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 el.classList.add("animated");
         });
     }
+
     animateOnScroll();
 
     // ========================================================
-    // 7️⃣  FORMS — FRIENDLY RESPONSES
+    // 7️⃣  FORMS
     // ========================================================
     function handleForm(form, message) {
-        form?.addEventListener("submit", e => {
+        if (!form) return;
+        form.addEventListener("submit", e => {
             e.preventDefault();
             alert(message);
             form.reset();
@@ -160,5 +159,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     handleForm(leadForm, "Thanks! We'll contact you shortly 😊");
     handleForm(contactForm, "Message received — we reply within 24 hours 👍");
+
 });
-</script>
