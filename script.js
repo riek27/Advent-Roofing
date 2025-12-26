@@ -276,4 +276,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             }
         }
     });
-});  fix this script.js, the mobile menu toggle is not working, make it work and fix all other issue , make it very very better and nice and smooth that will make the website look really nice
+});
