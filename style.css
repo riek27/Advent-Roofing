@@ -1187,23 +1187,5 @@ footer {
     }
 }
 
-/* MOBILE FIXES */
-@media (max-width: 768px) {
 
-  .hero {
-    height: auto;              /* allow content to grow */
-    min-height: 100vh;         /* still fill the screen */
-    background-attachment: scroll;  /* iOS fix */
-    margin-top: 70px;          /* adjust for header */
-    padding: 20px 15px;
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;   /* stack text + form */
-    gap: 2rem;
-  }
-
-  .lead-form {
-    width: 100%;
-  }
 }
