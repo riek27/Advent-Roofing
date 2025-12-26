@@ -384,25 +384,6 @@ header.scrolled {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-@media (max-width: 768px) {
-
-  .hero {
-    height: auto;          /* allow content to grow */
-    min-height: 100vh;     /* still fill screen */
-    margin-top: 80px;      /* adjust if needed */
-    padding: 20px 16px;    /* add breathing room */
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr; /* stack items */
-    gap: 2rem;
-  }
-
-  .lead-form {
-    width: 100%;
-  }
-}
-
 /* Section Padding */
 .section-padding {
     padding: 5rem 0;
@@ -1185,7 +1166,4 @@ footer {
         font-size: 1.1rem;
         min-height: 3rem;
     }
-}
-
-
 }
